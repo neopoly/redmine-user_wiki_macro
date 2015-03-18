@@ -1,6 +1,6 @@
 # redmine-user_wiki_macro
 
-Adds a {{user(login_name)}} macro to the Redmine's wiki engine
+Adds a `{{user(login_name)}}` macro to the Redmine's wiki engine
 
 ## Installation
 
