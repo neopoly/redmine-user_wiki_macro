@@ -36,7 +36,10 @@ Restart the Redmine application
 
 ## Usage
 
-No further steps needed
+This macros works best with enabled user avatars. Enable the Gravatar images via
+the administration settings:
+
+    Administration > Settings > Display -> Use Gravatar user icons
 
 ## Testing
 
