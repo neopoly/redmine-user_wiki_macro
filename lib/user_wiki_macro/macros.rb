@@ -16,10 +16,21 @@ module UserWikiMacro
       user     = User.find_by_login(username)
       return nil unless user
 
-      content_tag :span, class: "user-wiki-macro user-wiki-macro-user" do
-        label = avatar(user, size: UserWikiMacro.determine_size(options))
-        label += content_tag(:span, user.login)
-        link_to label, user_path(user)
+      image = avatar(user, size: UserWikiMacro.determine_size(options))
+
+      css   = ["user-wiki-macro user-wiki-macro-user"]
+      label = []
+
+      if image.present?
+        css   << "user-wiki-macro-user-with-avatar"
+        label << image
+        label << content_tag(:span, user.login)
+      else
+        label << user.login
+      end
+
+      content_tag :span, class: css do
+        link_to label.join.html_safe, user_path(user)
       end
     end
   end
